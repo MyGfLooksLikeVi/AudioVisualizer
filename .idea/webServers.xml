@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="fb70b199-fe40-4b73-86ba-2efc655c7eb1" name="ovz1.cthutqspb.zm9y1.vps.myjino.ru" url="http://ovz1.cthutqspb.zm9y1.vps.myjino.ru">
+        <fileTransfer host="ovz1.cthutqspb.zm9y1.vps.myjino.ru" port="49164" rootFolder="/var/www/domains/canvasplayer.ru" accessType="SFTP" password="dfc6dfcfdfd8dfcbdf98df9fdf9bdf9e" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="49164" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

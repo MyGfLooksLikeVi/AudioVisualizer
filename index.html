@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="vs-wrapper">
+    <div class="wrapper">
+        <input id="audioFile" type="file" placeholder="upload file">
+        <label for="audioFile">Choose a file</label>
+        <p id="trackName" class="track-name"></p>
+        <input id="volumeControl" type="range" min="0" max="100" step="1">
+    </div>
+
+    <button id="play" class="play-button">
+        <svg viewbox="0 0 140 140">
+            <circle cx="70" cy="70" r="65" style="fill:none;stroke:rgba(40, 200, 250, .6);"/>
+            <polygon id="shape" points="50,40 100,70 100,70 50,100, 50,40" style="fill:rgba(40, 200, 250, .6);">
+                <animate
+                        id="animate_to_stop"
+                        begin="indefinite"
+                        fill="freeze"
+                        attributeName="points"
+                        dur="500ms"
+                        to="45,45 95,45 95,95, 45,95 45,45"
+                        keySplines="
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1"
+                        keyTimes="0;0.22;0.33;0.55;0.66;0.88;1"
+                        calcMode="spline"
+                />
+
+                <animate
+                        id="animate_to_play"
+                        begin="indefinite"
+                        fill="freeze"
+                        attributeName="points"
+                        dur="500ms"
+                        to="50,40 100,70 100,70 50,100, 50,40"
+                        keySplines="
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1;
+        0.1 0.8 0.2 1"
+                        keyTimes="0;0.22;0.33;0.55;0.66;0.88;1"
+                        calcMode="spline"
+                />
+            </polygon>
+        </svg>
+    </button>
+    <canvas id="visualizer" width="800" height="400">
+    </canvas>
+</div>
+
+<audio id="audio" src="Noisia-Tommys_Theme.mp3" crossorigin="anonymous"  controls="">
+</audio>
+
+
+<div class="audio-bottom-panel">
+    <div class="timers">
+        <div id="currentTime" class="current-time"></div>
+        <span>/</span>
+        <div id="duration" class="duration"></div>
+    </div>
+    <canvas id="progressBar" class="progress-bar"></canvas>
+</div>
+
+
+<script src="jquery-3.1.1.min.js"></script>
+<script src="visualizer.js"></script>
+</body>
+</html>
