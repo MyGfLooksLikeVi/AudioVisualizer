@@ -10,7 +10,6 @@ var AudioVisualizer = {
             audioSrc.connect(analyser);
             analyser.connect(ctx.destination);
 
-            console.log(analyser.frequencyBinCount);
             var canvas = document.getElementById('visualizer'),
                 cwidth = 1,
                 cheight = 4,
@@ -139,7 +138,6 @@ var AudioVisualizer = {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.fillStyle = "rgba(10,100,255, 0.3)";
                 var fWidth = (elapsedTime / audio.duration) * (canvas.width);
-                console.log(fWidth);
                 if(fWidth > 0) {
                     ctx.fillRect(0, 0, fWidth, canvas.height);
                 }
@@ -150,14 +148,12 @@ var AudioVisualizer = {
 
     displayTrackName: function () {
         var audio = document.getElementById('audio');
-        console.log(audio.attributes.src.value);
         document.getElementById('trackName').innerHTML = audio.attributes.src.value;
     },
 
     changeTrack: function () {
 
         $('#audioFile').on('change', function (e) {
-            console.log(this.files[0]);
             var file = URL.createObjectURL(this.files[0]);
             $('#audio').attr('src', file);
             $('#trackName').html(this.files[0].name);
